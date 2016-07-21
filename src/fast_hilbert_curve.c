@@ -23,11 +23,12 @@ static inline uint32_t integrate(uint32_t x) {
 	evens=pdep_u32(0x55555555u,x);
 	odds=pdep_u32(0xAAAAAAAAu,x);
 	popcount=__builtin_popcountl(x);
-	if (popcount&1) {
-		return (evens+(~odds));
-	} else {
-		return ~(evens+(~odds));
-	}
+	//if (popcount&1) {
+	//	return (evens+(~odds));
+	//} else {
+	//	return ~(evens+(~odds));
+	//}
+	return (~(-(popcount & 1))) ^ (evens + (~odds));
 }
 
 point_pair fast_hilebert_curve(uint64_t idx) {
