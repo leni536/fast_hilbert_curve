@@ -25,7 +25,7 @@ DEPDIR ?= dep
 BINDIR ?= bin
 TESTSDIR ?= tests
 SRCEXT ?= c
-CFLAGS += -g -O2 -mbmi2 -msse4.2
+CFLAGS += -g -O2 -march=haswell
 INCLUDE += -I include
 
 # /CONFIG
