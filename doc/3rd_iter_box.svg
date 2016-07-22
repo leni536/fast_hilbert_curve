@@ -167,7 +167,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="2.8"
-     inkscape:cx="148.39611"
+     inkscape:cx="94.467539"
      inkscape:cy="76.484605"
      inkscape:document-units="px"
      inkscape:current-layer="layer5"
@@ -193,7 +193,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -309,17 +309,22 @@
        d="m 10,151 140,0"
        id="path7376"
        inkscape:connector-curvature="0" />
-    <flowRoot
-       xml:space="preserve"
-       id="flowRoot5109"
+    <g
+       transform="translate(52.800066,-55.145364)"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:125%;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       transform="translate(52.800066,-55.145364)"><flowRegion
-         id="flowRegion5111"><rect
-           id="rect5113"
-           width="80"
-           height="60"
-           x="0"
-           y="91"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, '" /></flowRegion><flowPara
-         id="flowPara5115">3rd</flowPara></flowRoot>  </g>
+       id="flowRoot5109">
+      <path
+         d="m 18.28,123.92711 c 0,-3.28 -2.52,-6.4 -6.68,-7.24 3.28,-1.08 5.6,-3.88 5.6,-7.04 0,-3.28 -3.52,-5.52 -7.36,-5.52 -4.04,0 -7.08,2.4 -7.08,5.44 0,1.32 0.88,2.08 2.04,2.08 1.24,0 2.04,-0.88 2.04,-2.04 0,-2 -1.88,-2 -2.48,-2 1.24,-1.96 3.88,-2.48 5.32,-2.48 1.64,0 3.84,0.88 3.84,4.48 0,0.48 -0.08,2.8 -1.12,4.56 -1.2,1.92 -2.56,2.04 -3.56,2.08 -0.32,0.04 -1.28,0.12 -1.56,0.12 -0.32,0.04 -0.6,0.08 -0.6,0.48 0,0.44 0.28,0.44 0.96,0.44 l 1.76,0 c 3.28,0 4.76,2.72 4.76,6.64 0,5.44 -2.76,6.6 -4.52,6.6 -1.72,0 -4.72,-0.68 -6.12,-3.04 1.4,0.2 2.64,-0.68 2.64,-2.2 0,-1.44 -1.08,-2.24 -2.24,-2.24 -0.96,0 -2.24,0.56 -2.24,2.32 0,3.64 3.72,6.28 8.08,6.28 4.88,0 8.52,-3.64 8.52,-7.72 z"
+         style=""
+         id="path5175" />
+      <path
+         d="m 34.56,115.52711 c 0,-1.28 -1.24,-2.44 -2.96,-2.44 -2.92,0 -4.36,2.68 -4.92,4.4 l 0,-4.4 -5.56,0.44 0,1.24 c 2.8,0 3.12,0.28 3.12,2.24 l 0,10.72 c 0,1.8 -0.44,1.8 -3.12,1.8 l 0,1.24 4.56,-0.12 c 1.6,0 3.48,0 5.08,0.12 l 0,-1.24 -0.84,0 c -2.96,0 -3.04,-0.44 -3.04,-1.88 l 0,-6.16 c 0,-3.96 1.68,-7.52 4.72,-7.52 0.28,0 0.36,0 0.44,0.04 -0.12,0.04 -0.92,0.52 -0.92,1.56 0,1.12 0.84,1.72 1.72,1.72 0.72,0 1.72,-0.48 1.72,-1.76 z"
+         style=""
+         id="path5177" />
+      <path
+         d="m 56.783125,130.76711 0,-1.24 c -2.8,0 -3.12,-0.28 -3.12,-2.24 l 0,-24.28 -5.76,0.44 0,1.24 c 2.8,0 3.12,0.28 3.12,2.24 l 0,8.64 c -1.16,-1.44 -2.88,-2.48 -5.04,-2.48 -4.72,0 -8.92,3.92 -8.92,9.08 0,5.08 3.92,9.04 8.48,9.04 2.56,0 4.36,-1.36 5.36,-2.64 l 0,2.64 5.88,-0.44 z m -5.88,-4.72 c 0,0.72 0,0.8 -0.44,1.48 -1.2,1.92 -3,2.8 -4.72,2.8 -1.8,0 -3.24,-1.04 -4.2,-2.56 -1.04,-1.64 -1.16,-3.92 -1.16,-5.56 0,-1.48 0.08,-3.88 1.24,-5.68 0.84,-1.24 2.36,-2.56 4.52,-2.56 1.4,0 3.08,0.6 4.32,2.4 0.44,0.68 0.44,0.76 0.44,1.48 l 0,8.2 z"
+         style=""
+         id="path5179" />
+    </g>
+  </g>
 </svg>
