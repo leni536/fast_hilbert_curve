@@ -25,7 +25,7 @@ DEPDIR ?= dep
 BINDIR ?= bin
 TESTSDIR ?= tests
 SRCEXT ?= c
-CFLAGS += -g -O2 -march=haswell
+CFLAGS += -g -O2
 INCLUDE += -I include
 
 # /CONFIG
@@ -45,8 +45,10 @@ DEPENDS := ${patsubst ${SRCDIR}/%.${SRCEXT},${DEPDIR}/%.d,${SOURCES}}
 target: ${TARGET_ELFS}
 	
 tests: ${TEST_ELFS}
+
+wolfram: Wolfram/fast_hilbert_wolfram.so
 	
-all: target tests
+all: target tests wolfram
 	
 include ${DEPENDS}
 
@@ -62,6 +64,14 @@ ${BUILDDIR}/%.o: ${SRCDIR}/%.${SRCEXT}
 	@mkdir -p `dirname $@` ;\
 	echo '$(CC) -c ${INCLUDE} ${CFLAGS} $< -o $@' ;\
 	      $(CC) -c ${INCLUDE} ${CFLAGS} $< -o $@
+
+Wolfram/fast_hilbert_wolfram.so: Wolfram/fast_hilbert_wolfram.o ${LIB_OBJECTS}
+	$(CC) $^ -fPIC -shared -o $@
+
+Wolfram/fast_hilbert_wolfram.o: Wolfram/fast_hilbert_wolfram.c
+	$(CC) -c ${INCLUDE} ${CFLAGS} $< -o $@
+
+
 dirs:
 	mkdir -p ${SRCDIR} ${BUILDDIR} ${DEPDIR} ${BINDIR} ${TESTSDIR} ${SRCDIR}/target ${SRCDIR}/tests
 
@@ -69,7 +79,9 @@ clean:
 	rm -rf ${BUILDDIR}/*	\
 	       ${BINDIR}/*	\
 	       ${TESTSDIR}/*    \
-	       $(DEPDIR)/*;
+	       $(DEPDIR)/*     	\
+	       Wolfram/*.so	\
+	       Wolfram/*.o;
 
 .PHONY: target tests all dirs clean
 	

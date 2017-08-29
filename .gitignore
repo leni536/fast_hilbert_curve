@@ -1,3 +1,8 @@
 /build/
 /dep/
 /tests/
+
+/Wolfram/fast_hilbert_wolfram.o
+/Wolfram/fast_hilbert_wolfram.so
+/Wolfram/mathlink.h
+/Wolfram/WolframLibrary.h

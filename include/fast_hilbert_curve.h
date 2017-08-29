@@ -25,7 +25,7 @@ typedef struct {
 	uint32_t y;
 } point_pair;
 
-point_pair fast_hilebert_curve(uint64_t idx);
+point_pair fast_hilbert_curve(uint64_t idx);
 
 
 #endif //FAST_HILBERT_CURVE_H

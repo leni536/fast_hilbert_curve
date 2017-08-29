@@ -23,7 +23,7 @@
 int main() {
 
 	for (uint64_t idx=0; idx < 64; idx++) {
-		point_pair pair=fast_hilebert_curve(idx);
+		point_pair pair=fast_hilbert_curve(idx);
 		printf("%lu (%d, %d)\n",idx,pair.x,pair.y);
 	}
 

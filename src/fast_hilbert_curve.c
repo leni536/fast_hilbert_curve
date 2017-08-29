@@ -31,7 +31,7 @@ static inline uint32_t integrate(uint32_t x) {
 	return (~(-(popcount & 1))) ^ (evens + (~odds));
 }
 
-point_pair fast_hilebert_curve(uint64_t idx) {
+point_pair fast_hilbert_curve(uint64_t idx) {
 	uint32_t a,b,s1,s2;
 
 	b=pext_u64(idx,0x5555555555555555u); // even bits
