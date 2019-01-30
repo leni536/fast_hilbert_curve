@@ -15,8 +15,8 @@
  * License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef BMI2_H
-#define BMI2_H
+#ifndef UUID_933CC346_9AAD_4677_AD8A_017F3C5F3292
+#define UUID_933CC346_9AAD_4677_AD8A_017F3C5F3292
 
 #include <stdint.h>
 
@@ -58,6 +58,4 @@ static uint32_t pdep_u32(uint32_t src, uint32_t mask) {
 #endif
 }
 
-
-
-#endif //BMI2_H
+#endif //  UUID_933CC346_9AAD_4677_AD8A_017F3C5F3292

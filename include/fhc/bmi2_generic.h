@@ -15,8 +15,8 @@
  * License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef BMI2_GENERIC_H
-#define BMI2_GENERIC_H
+#ifndef UUID_D7EB1DA9_B017_4CFE_A958_7590DEACDD14
+#define UUID_D7EB1DA9_B017_4CFE_A958_7590DEACDD14
 
 #include <stdint.h>
 
@@ -135,4 +135,4 @@ static uint32_t helper_pdep_u32(uint32_t src, uint32_t mask)
     return dest;
 }
 
-#endif //BMI2_GENERIC_H
+#endif //  UUID_D7EB1DA9_B017_4CFE_A958_7590DEACDD14

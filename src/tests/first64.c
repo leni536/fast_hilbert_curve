@@ -17,14 +17,12 @@
 
 #include <stdint.h>
 #include <stdio.h>
-#include "bmi2.h"
-#include "fast_hilbert_curve.h"
+#include <fhc/hilbert.h>
 
 int main() {
-
 	for (uint64_t idx=0; idx < 64; idx++) {
-		point_pair pair=fast_hilbert_curve(idx);
-		printf("%lu (%d, %d)\n",idx,pair.x,pair.y);
+		fhc_point p=fhc_hilbert(idx);
+		printf("%lu (%d, %d)\n",idx,p.x,p.y);
 	}
 
 	return 0;

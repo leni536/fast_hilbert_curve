@@ -1,4 +1,4 @@
-#include "fast_hilbert_curve.h"
+#include <fhc/hilbert.h>
 
 #include "mathlink.h"
 #include "WolframLibrary.h"
@@ -32,8 +32,8 @@ DLLEXPORT int fast_hilbert_curve_wstp( WolframLibraryData libData, MLINK lp)
 	if ( !MLGetInteger64(lp, &i) )
 		return LIBRARY_FUNCTION_ERROR;
 
-	point_pair p;
-	p = fast_hilbert_curve(i);
+	fhc_point p;
+	p = fhc_hilbert(i);
 
 	if ( !MLPutInteger32List(lp, (int *)&p, 2) )
 		return LIBRARY_FUNCTION_ERROR;

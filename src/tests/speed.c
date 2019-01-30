@@ -1,10 +1,10 @@
-#include<stdint.h>
-#include "fast_hilbert_curve.h"
+#include <stdint.h>
+#include <fhc/hilbert.h>
 
 int main() {
-	volatile point_pair pair;
+	volatile fhc_point p;
 	for(uint64_t idx=0; idx<100000000; idx++) {
-		pair = fast_hilbert_curve( idx );
+		p = fhc_hilbert( idx );
 	}
 	return 0;
 }
