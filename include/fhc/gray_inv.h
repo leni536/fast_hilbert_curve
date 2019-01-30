@@ -18,19 +18,27 @@
 #ifndef UUID_D9B7D6BF_42A9_430B_A3CD_66D30DD6EE51
 #define UUID_D9B7D6BF_42A9_430B_A3CD_66D30DD6EE51
 
-#include <fhc/bmi2.h>
+#ifdef __BMI2__
+#include <x86intrin.h>
 
 inline uint32_t fhc_gray_inv(uint32_t x) {
 	uint32_t evens, odds, popcount;
-	evens=pdep_u32(0x55555555u,x);
-	odds=pdep_u32(0xAAAAAAAAu,x);
+	evens=_pdep_u32(0x55555555u,x);
+	odds=_pdep_u32(0xAAAAAAAAu,x);
 	popcount=__builtin_popcountl(x);
-	//if (popcount&1) {
-	//	return (evens+(~odds));
-	//} else {
-	//	return ~(evens+(~odds));
-	//}
 	return (~(-(popcount & 1))) ^ (evens + (~odds));
 }
+
+#else // ndef __BMI2__
+
+inline uint32_t fhc_gray_inv(uint32_t x) {
+	x ^= (x>>1);
+	x ^= (x>>2);
+	x ^= (x>>4);
+	x ^= (x>>8);
+	x ^= (x>>16);
+	return x;
+}
+#endif // __BMI2__
 
 #endif //  UUID_D9B7D6BF_42A9_430B_A3CD_66D30DD6EE51

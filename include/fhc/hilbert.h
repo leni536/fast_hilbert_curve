@@ -21,6 +21,12 @@
 #include <stdint.h>
 #include <fhc/gray_inv.h>
 
+#ifdef __BMI2__
+#  include <x86intrin.h>
+#else
+#  include <fhc/bit_even_odd.h>
+#endif
+
 typedef struct {
 	uint32_t x;
 	uint32_t y;
@@ -29,8 +35,14 @@ typedef struct {
 inline fhc_point fhc_hilbert(uint64_t idx) {
 	uint32_t a,b,s1,s2;
 
-	b=pext_u64(idx,0x5555555555555555u); // even bits
-	a=pext_u64(idx,0xAAAAAAAAAAAAAAAAu); // odd bits
+#ifdef __BMI2__
+	b=_pext_u64(idx,0x5555555555555555u); // even bits
+	a=_pext_u64(idx,0xAAAAAAAAAAAAAAAAu); // odd bits
+#else // ndef __BMI2__
+	uint64_t x = fhc_separate_even_odd_bits(idx);
+	b = x; // low bits = even bits
+	a = (x >> 32); // high bits = odd bits
+#endif // __BMI2__
 	s1=(~a)&(~b);
 	s2=a&b;
 
@@ -39,12 +51,11 @@ inline fhc_point fhc_hilbert(uint64_t idx) {
 
 	a=(a^s1)^((~b)&(s1^s2));
 
-	fhc_point pair;
+	fhc_point p;
+	p.x=a;
+	p.y=a^b;
 
-	pair.x=a;
-	pair.y=a^b;
-
-	return pair;
+	return p;
 }
 
 #endif //  UUID_D8112E71_9CCC_4E01_B9B9_6FC6B0226419

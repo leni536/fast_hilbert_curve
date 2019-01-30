@@ -15,20 +15,17 @@
  * License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <fhc/hilbert.h>
-#include <fhc/gray_inv.h>
-#include <fhc/bit_permute_step.h>
-#include <fhc/bit_even_odd.h>
+#ifndef UUID_DBA339AC_D33E_4D33_A428_DD6D9F786813
+#define UUID_DBA339AC_D33E_4D33_A428_DD6D9F786813
 
-//hilbert instantiations
-fhc_point fhc_hilbert(uint64_t idx);
+#include <stddef.h>
+#include <stdint.h>
 
-//gray_inv instantiation
-uint32_t fhc_gray_inv(uint32_t x);
+inline uint64_t fhc_bit_permute_step(uint64_t x, uint64_t m, size_t shift) {
+	uint64_t t;
+	t = ((x >> shift) ^ x) & m;
+	x = (x ^ t) ^ (t << shift);
+	return x;
+}
 
-//bit_permute_step
-uint64_t fhc_bit_permute_step(uint64_t x, uint64_t m, size_t shift);
-
-//bit_even_odd
-uint64_t fhc_separate_even_odd_bits(uint64_t x);
-uint64_t fhc_shuffle_bits(uint64_t x);
+#endif  //  UUID_DBA339AC_D33E_4D33_A428_DD6D9F786813
