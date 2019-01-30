@@ -26,7 +26,7 @@
 #  include "bmi2_generic.h"
 #endif
 
-static uint64_t pext_u64(uint64_t src, uint64_t mask) {
+inline uint64_t pext_u64(uint64_t src, uint64_t mask) {
 #ifdef __BMI2__
 	return _pext_u64(src, mask);
 #else
@@ -34,7 +34,7 @@ static uint64_t pext_u64(uint64_t src, uint64_t mask) {
 #endif
 }
 
-static uint32_t pext_u32(uint32_t src, uint32_t mask) {
+inline uint32_t pext_u32(uint32_t src, uint32_t mask) {
 #ifdef __BMI2__
 	return _pext_u32(src, mask);
 #else
@@ -42,7 +42,7 @@ static uint32_t pext_u32(uint32_t src, uint32_t mask) {
 #endif
 }
 
-static uint64_t pdep_u64(uint64_t src, uint64_t mask) {
+inline uint64_t pdep_u64(uint64_t src, uint64_t mask) {
 #ifdef __BMI2__
 	return _pdep_u64(src, mask);
 #else
@@ -50,7 +50,7 @@ static uint64_t pdep_u64(uint64_t src, uint64_t mask) {
 #endif
 }
 
-static uint32_t pdep_u32(uint32_t src, uint32_t mask) {
+inline uint32_t pdep_u32(uint32_t src, uint32_t mask) {
 #ifdef __BMI2__
 	return _pdep_u32(src, mask);
 #else

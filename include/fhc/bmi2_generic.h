@@ -17,6 +17,8 @@
 
 #ifndef UUID_D7EB1DA9_B017_4CFE_A958_7590DEACDD14
 #define UUID_D7EB1DA9_B017_4CFE_A958_7590DEACDD14
+#ifndef BMI2_GENERIC_H
+#define BMI2_GENERIC_H
 
 #include <stdint.h>
 
@@ -29,7 +31,7 @@
 # define QEMU_GNUC_PREREQ(maj, min) 0
 #endif
 
-static inline int ctz32(uint32_t val)
+inline int ctz32(uint32_t val)
 {
 #if QEMU_GNUC_PREREQ(3, 4)
     return val ? __builtin_ctz(val) : 32;
@@ -66,7 +68,7 @@ static inline int ctz32(uint32_t val)
 #endif
 }
 
-static inline int ctz64(uint64_t val)
+inline int ctz64(uint64_t val)
 {
 #if QEMU_GNUC_PREREQ(3, 4)
     return val ? __builtin_ctzll(val) : 64;
@@ -83,7 +85,7 @@ static inline int ctz64(uint64_t val)
 #endif
 }
 
-static uint32_t helper_pext_u32(uint32_t src, uint32_t mask)
+inline uint32_t helper_pext_u32(uint32_t src, uint32_t mask)
 {
     uint32_t dest = 0;
     int i, o;
@@ -96,7 +98,7 @@ static uint32_t helper_pext_u32(uint32_t src, uint32_t mask)
     return dest;
 }
 
-static uint64_t helper_pext_u64(uint64_t src, uint64_t mask)
+inline uint64_t helper_pext_u64(uint64_t src, uint64_t mask)
 {
     uint64_t dest = 0;
     int i, o;
@@ -109,7 +111,7 @@ static uint64_t helper_pext_u64(uint64_t src, uint64_t mask)
     return dest;
 }
 
-static uint64_t helper_pdep_u64(uint64_t src, uint64_t mask)
+inline uint64_t helper_pdep_u64(uint64_t src, uint64_t mask)
 {
     uint64_t dest = 0;
     int i, o;
@@ -122,7 +124,7 @@ static uint64_t helper_pdep_u64(uint64_t src, uint64_t mask)
     return dest;
 }
 
-static uint32_t helper_pdep_u32(uint32_t src, uint32_t mask)
+inline uint32_t helper_pdep_u32(uint32_t src, uint32_t mask)
 {
     uint32_t dest = 0;
     int i, o;
@@ -135,4 +137,5 @@ static uint32_t helper_pdep_u32(uint32_t src, uint32_t mask)
     return dest;
 }
 
+#endif //BMI2_GENERIC_H
 #endif //  UUID_D7EB1DA9_B017_4CFE_A958_7590DEACDD14
