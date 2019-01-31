@@ -20,17 +20,13 @@
 
 #include <stdint.h>
 #include <fhc/gray_inv.h>
+#include <fhc/point.h>
 
 #ifdef __BMI2__
 #  include <x86intrin.h>
 #else
 #  include <fhc/bit_even_odd.h>
 #endif
-
-typedef struct {
-	uint32_t x;
-	uint32_t y;
-} fhc_point;
 
 inline fhc_point fhc_hilbert(uint64_t idx) {
 	uint32_t a,b,s1,s2;
